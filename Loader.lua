@@ -13,9 +13,9 @@ end
 
 if placeId == 5233782396 then
     if IsOnComputer then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Creature%20of%20Sonaria"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Creature%20of%20Sonaria%20Recode/CoS%20Computer%20Script.lua"))()
     elseif IsOnMobile then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Creature%20of%20Sonaria%20Mobile"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Creature%20of%20Sonaria%20Recode/Cos%20Mobile%20Script.lua"))()
     end
  elseif placeId == 3095204897 then
     if IsOnComputer then
@@ -23,10 +23,4 @@ if placeId == 5233782396 then
     elseif IsOnMobile then
         game:service('Players').LocalPlayer:Kick('There is no isle 9 script for mobil!')
     end
-    elseif placeId == 13842554790 then
-        if IsOnComputer then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Creature%20of%20Sonaria%20Recode/CoS%20Computer%20Script.lua"))()
-        elseif IsOnMobile then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Creature%20of%20Sonaria%20Recode/Cos%20Mobile%20Script.lua"))()
-        end
  end
