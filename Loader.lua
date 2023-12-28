@@ -22,7 +22,7 @@ if placeId == 5233782396 then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Isle%209%20Script"))()
     elseif IsOnMobile then
         game:service('Players').LocalPlayer:Kick('There is no isle 9 script for mobil!')
+   end
  elseif placeId == 5171347293 then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lycan-X-Hub/main/Cabin-Crew-Simulator.lua"))()
-    end
  end
