@@ -848,7 +848,7 @@ function Hide()
 	Debounce = true
 	if not hasHidden then
 		hasHidden = true
-		ArrayFieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping RightShift", Duration = 10})
+		ArrayFieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can show it by tapping the Toogle with the Script Hub logo!", Duration = 10})
 		--delay(60, function() hasHidden = false end)
 	end
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
