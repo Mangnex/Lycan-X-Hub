@@ -3506,37 +3506,26 @@ ContextActionService:BindAction("Field",function(name,inputState,inputObject)
 end,true)
 --]]
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.DisplayOrder = 100
-ScreenGui.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-ScreenGui.Parent = gethui and gethui() or game:GetService("CoreGui")
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.CoreGui
 
-local UniButton = Instance.new("ImageLabel")
-UniButton.Image = "rbxassetid://14076923102"
-UniButton.Active = false
---UniButton.AnchorPoint = Vector2.new(0.5,0.5)
-UniButton.ZIndex = 10
-UniButton.Position = UDim2.new(0.8,0,0,0)
-UniButton.BorderSizePixel = 0
-UniButton.BackgroundTransparency = 1
-UniButton.Size = UDim2.new(0, 42, 0, 42)
-UniButton.SizeConstraint = Enum.SizeConstraint.RelativeXY
-UniButton.Parent = ScreenGui
+local ButtonGui = Instance.new("ImageButton")
+ButtonGui.Parent = screenGui
+ButtonGui.Position = UDim2.new(0.01, 0, 0.3, 0) 
+ButtonGui.Size = UDim2.new(0, 43, 0, 43) 
+ButtonGui.BackgroundTransparency = 0 
+ButtonGui.Image = "rbxassetid://14076923102" 
+ButtonGui.BackgroundColor3 = Color3.new(0, 0, 0) 
+ButtonGui.BorderColor3 = Color3.new(1, 1, 1) 
+ButtonGui.ClipsDescendants = true 
 
-local UniBoxButton = Instance.new("TextButton")
-UniBoxButton.Name = "UniBoxButton"
---UniBoxButton.AnchorPoint = Vector2.new(0.5,0.5)
-UniBoxButton.ZIndex = 10
-UniBoxButton.AnchorPoint = Vector2.new(0.5, 0)
-UniBoxButton.Position = UDim2.new(0.5, 0, 0, 0)
-UniBoxButton.Size = UDim2.new(0, 42+21, 0, 42)
-UniBoxButton.BorderSizePixel = 0
-UniBoxButton.BackgroundTransparency = 1
-UniBoxButton.Text = ""
-UniBoxButton.SizeConstraint = Enum.SizeConstraint.RelativeXY
-UniBoxButton.Parent = UniButton
+local UICorner = Instance.new("UICorner")
+UICorner.Parent = ButtonGui
 
-ArrayFieldLibrary.UniButton = UniButton
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Parent = ButtonGui
+UIStroke.Thickness = 2
+ArrayFieldLibrary.UniButton = ButtonGui
 
 function ArrayFieldLibrary:Destroy()
 	ArrayField:Destroy()
@@ -3545,7 +3534,7 @@ function ArrayFieldLibrary:Destroy()
 	if KeyUI then KeyUI:Destroy() end
 end
 
-UniButtonClicked = function(name,inputState,inputObject)
+ButtonGui.MouseButton1Click:Connect(function(name,inputState,inputObject)
 	if Debounce then return end
 	if Hidden then
 		Hidden = false
@@ -3555,9 +3544,7 @@ UniButtonClicked = function(name,inputState,inputObject)
 		Hidden = true
 		Hide()
 	end
-end
-
-UniBoxButton.MouseButton1Click:Connect(UniButtonClicked)
+end)
 
 --[[
 local Field = ContextActionService:GetButton("Field")
